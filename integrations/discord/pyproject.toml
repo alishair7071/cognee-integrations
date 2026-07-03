@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cognee-integration-discord"
+version = "0.1.0"
+description = "Cognee-backed memory for Discord servers (per-guild/per-channel isolation)."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    {name = "Cognee team"}
+]
+dependencies = [
+    "cognee>=1.0.0,<2.0.0",
+    "discord.py>=2.3,<3",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["cognee_integration_discord*"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.14.6",
+]
